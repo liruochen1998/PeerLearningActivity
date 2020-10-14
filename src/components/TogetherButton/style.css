@@ -1,6 +1,5 @@
 .TogetherJSButton {
-    z-index: 2;
+    z-index: 1;
     position: absolute;
     top:0px;
-    color: pink;
 }

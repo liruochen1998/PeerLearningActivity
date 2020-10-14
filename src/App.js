@@ -3,8 +3,8 @@ import './App.css';
 import { Container } from 'semantic-ui-react';
 import Map from './components/Map/Map.js';
 import HelpButton from './components/help/HelpButton.js';
-import QAPanel from './components/QAPanel/QAPanel.js';
-import DataDisplay from './components/DataDisplay/DataDisplay.js';
+// import QAPanel from './components/QAPanel/QAPanel.js';
+import DataPanels from './components/dataPanels/dataPanels.js';
 
 function App() {
   return (
@@ -12,8 +12,8 @@ function App() {
       <HelpButton />
       <Container>
         <Map/>
-        <DataDisplay/>
-        <QAPanel/>
+        <DataPanels/>
+        {/* <QAPanel/> */}
       </Container>
     </React.Fragment>
   );
