@@ -2,14 +2,15 @@ import React from 'react';
 import './style.css';
 import {getDefaultHeading, getStyledHeadings} from '../../utils/data.js';
 
-function RadioButton(headings, checkedButton, handleChange) {
+export function RadioButton(headings, checkedButton, handleChange) {
     let nameCount = -1;
+    console.log(typeof headings);
     const labels = headings.map(currHeading => {
             nameCount ++;
             return(
-        <div className="field" key = {nameCount}>
+        <div className="field" key = {nameCount}  data-testid="RadioButton">
             <div className="ui radio checkbox">
-                <input type="radio" name={'button' + nameCount} value={currHeading} checked={checkedButton === currHeading} onChange={handleChange} />
+                <input type="radio" name={'button'} value={currHeading} checked={checkedButton === currHeading} onChange={handleChange} />
                 <label><p className='capitalize'>{currHeading}</p></label>
             </div>
         </div>
@@ -45,7 +46,7 @@ class RadioButtonPanel extends React.Component {
 
     render() {
         return(
-            <div ref={(childComponent) => {window.radioButtonComponent = childComponent}} className="ui raised segment compact radioPanel">
+            <div ref={(childComponent) => {window.radioButtonComponent = childComponent}} className="ui raised segment compact radioPanel" data-testid="RadioButtonPanel">
                 <div className="ui form">
                     <div className="grouped fields">
                         {RadioButton(this.headings, this.state.checkedButton, this.handleChange)}

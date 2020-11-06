@@ -3,11 +3,12 @@ import { Container } from 'semantic-ui-react';
 import './MapAndDataContainer.css';
 import Map from '../Map/Map.js';
 import DataPanels from '../dataPanels/dataPanels.js';
-import {getDefaultHeading, getDefaultDateInt, mapIntToDate, organizedObject} from '../../utils/data.js';
+import {getDefaultHeading, getDefaultDateInt, mapIntToDate, organizedObject, getStyledHeadings} from '../../utils/data.js';
 
 class MapAndDataContainer extends React.Component {
   constructor(props) {
     super(props);
+    this.headings = getStyledHeadings();
     this.state = {
       selectedState: 'Alabama',
       currentData: 0,
@@ -109,6 +110,7 @@ class MapAndDataContainer extends React.Component {
     return(
       <Container>
         <DataPanels 
+          headings={this.headings}
           updateLayer={this.updateLayer}
           changeDataType={this.changeDataType}
           changeSelectedDate={this.changeSelectedDate}

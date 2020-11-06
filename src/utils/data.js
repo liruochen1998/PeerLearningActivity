@@ -1,7 +1,7 @@
 import * as d3 from 'd3';
 import { statesData, dataCollect } from '../components/Map/us-states.js';
-let headings = [];
-let dataObject;
+export let headings = [];
+export let dataObject = [];
 export var organizedObject = {};
 
 export const renderData = async function(){
@@ -49,9 +49,13 @@ export const getDateObject = function(){
 
 export const getMinDate = function(){
     //TODO: store this in the object
+    if(getDateObject(dataObject).length > 1) {
     return getDateObject().reduce(function(prev, curr) {
         return prev.date < curr.date ? prev : curr;
     });
+    } else {
+        return getDateObject(dataObject)[0];
+    }
 }
 
 export const getMaxDate = function(){
