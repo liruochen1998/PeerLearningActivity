@@ -1,9 +1,0 @@
-.LogTable {
-    z-index: 1;
-    position: absolute;
-    top: 175px;
-    width:200px;
-    right: 60px;
-    display: flex;
-    flex-direction: column;
-}
